@@ -16,4 +16,6 @@ public interface BoardDAO {
     void updateHit(int board_no);
 
     void editBoard(BoardVO boardVO);
+
+    void deleteBoard(int board_no);
 }

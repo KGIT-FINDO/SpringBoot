@@ -45,4 +45,9 @@ public class BoardServiceImpl implements BoardService{
     public void editBoard(BoardVO boardVO) {
         this.boardDAO.editBoard(boardVO);
     }
+
+    @Override
+    public void deleteBoard(int board_no) {
+        this.boardDAO.deleteBoard(board_no);
+    }
 }

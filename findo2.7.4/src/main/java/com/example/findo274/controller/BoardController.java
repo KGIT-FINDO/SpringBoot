@@ -103,10 +103,10 @@ public class BoardController {
     }
 
     @GetMapping("board_cont")
-    public ModelAndView board_cont(@RequestParam("board_no") int board_no, String state, int page, BoardVO b) {
+    public ModelAndView board_cont(@RequestParam("board_no") int board_no, String state, int page, BoardVO b, HttpServletResponse response) {
         //@RequestParam("bbs_no")를 서블릿으로 표현하면 request.getParameter("bbs_no")와 같음.
         //int page로 표현해도 get으로 전달된 page 파라미터 값을 받을수 있다.
-
+        response.setContentType("text/html;Charset=UTF-8");
         if(state.equals("cont")) {//내용보기 일때만 조회수 증가
             b=this.boardService.getBoardCont(board_no);
 
@@ -114,7 +114,7 @@ public class BoardController {
             b=this.boardService.getBoardCont2(board_no);
         }
 
-        String board_cont=b.getBoard_cont().replace("\n", "<br/>");//textarea내용 입력박스에서 엔터키 친부분을 줄바꿈 처리
+        String board_cont = b.getBoard_cont().replace("\n", "<br/>");//textarea내용 입력박스에서 엔터키 친부분을 줄바꿈 처리
         ModelAndView cm = new ModelAndView();
         cm.addObject("b", b);//키 값 쌍으로 저장
         cm.addObject("board_cont", board_cont);
@@ -153,4 +153,35 @@ public class BoardController {
 
         return em;
     }
+
+    @PostMapping("board_del_ok")
+    public String board_del_ok(int board_no, int page,HttpServletResponse response, HttpServletRequest request, BoardVO b, HttpSession session) throws Exception{
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+        b=this.boardService.getBoardCont2(board_no);
+
+        String board_name = b.getBoard_name();
+        String id = (String) session.getAttribute("id");
+
+        if(board_name.equals(id)){
+            this.boardService.deleteBoard(board_no);
+            return "redirect:/community?page="+page;
+        }else if(!board_name.equals(id)){
+            out.println("<script>");
+            out.println("alert('권한이 없습니다..');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+
+        }
+        else{
+            out.println("<script>");
+            out.println("alert('로그인이 필요합니다.');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+        }
+        return null;
+
+    }
+
 }

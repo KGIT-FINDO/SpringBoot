@@ -16,4 +16,6 @@ public interface BoardService {
     BoardVO getBoardCont2(int board_no);
 
     void editBoard(BoardVO boardVO);
+
+    void deleteBoard(int board_no);
 }

@@ -14,4 +14,6 @@ public interface BoardMapper {
     public String board_updateHit();
 
     public String board_editBoard();
+
+    public String board_deleteBoard();
 }
