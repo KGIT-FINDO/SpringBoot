@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="Documents/springboot/findo2.7.4/src/main/webapp/WEB-INF/include/header.jsp" %>
+<%@ include file="./header.jsp" %>
 
 <div class="index_bell_wrapper">
 	<div class="index_bell_main_top"></div>
@@ -11,4 +11,4 @@
 	</div>
 </div>
 
-<%@ include file="Documents/springboot/findo2.7.4/src/main/webapp/WEB-INF/include/footer.jsp" %>
+<%@ include file="./footer.jsp" %>

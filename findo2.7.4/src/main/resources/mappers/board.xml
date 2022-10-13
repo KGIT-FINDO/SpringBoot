@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--검색 전후 레코드 갯수 검색-->
+<mapper namespace="board">
+
+
+    <insert id="board_insert">
+        insert into board(board_no,board_name,board_title,board_cont,board_hit,board_date)values (board_seq.nextval,#{board_name},#{board_title},#{board_cont},0,sysdate)
+    </insert>
+
+    <select id="board_getRowCount" resultType="int">
+        select count(board_no) from board
+    </select>
+
+    <select id="board_getBoardList" resultType="com.example.findo274.VO.BoardVO">
+        select * from (
+        select rowNum rNum, board_no, board_name, board_title, board_hit, board_date
+        from (select * from board
+        <where>
+            <if test="find_field == ''"></if><!-- 검색전 기준 -->
+            <if test="find_field == 'bbs_title'"><!--제목기준 -->
+                board_title like #{find_name} <!--like는 ~와 비슷한 문자를 검색하는 검색 연산자 -->
+            </if>
+            <if test ="find_field == 'bbs_cont'"><!--내용기준 검색 -->
+                board_cont like #{find_name}
+            </if>
+        </where>
+        order by board_no desc)) where rNum &gt;= #{startrow} and rNum &lt;= #{endrow}
+        <!-- &gt;=는 >=의 뜻, &lt;=는 <=dml 뜻.-->
+    </select>
+
+    <select id="board_getBoardCont" resultType="com.example.findo274.VO.BoardVO">
+        select * from board where board_no=#{board_no}
+    </select>
+
+    <update id="board_updateHit">
+        update board set board_hit=board_hit+1 where board_no=#{board_no}
+    </update>
+
+    <update id="board_editBoard">
+        update board set board_title=#{board_title}, board_cont=#{board_cont} where board_no=#{board_no}
+    </update>
+
+</mapper>
+

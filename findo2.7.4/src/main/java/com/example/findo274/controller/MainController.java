@@ -35,10 +35,7 @@ public class MainController {
         return "index_portfolio";
     }
 
-    @GetMapping("/community")
-    public String Community(){
-        return "index_community";
-    }
+
 
     @GetMapping("/news")
     public String News(){

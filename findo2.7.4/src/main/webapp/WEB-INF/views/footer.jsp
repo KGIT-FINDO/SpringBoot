@@ -4,16 +4,16 @@
 <div class="footer">
 	<div class="footer_top">
 		<div class="footer_top_list">
-			<li><a href="/">Home</a></li>
-			<li><a href="/index_company.jsp">Company</a></li>
+			<li><a href="#">Home</a></li>
+			<li><a href="/front2/html/index_company.jsp">Company</a></li>
 		</div>
 		<div class="footer_top_list">
-			<li><a href="/index_investment.jsp">Investment</a></li>
-			<li><a href="/index_products.jsp">Products</a></li>
+			<li><a href="/front2/html/index_investment.jsp">Investment</a></li>
+			<li><a href="/front2/html/index_products.jsp">Products</a></li>
 		</div>
 		<div class="footer_top_list">
-			<li><a href="/index_faq.jsp">FAQ</a></li>
-			<li><a href="/index_management.jsp">Management</a></li>
+			<li><a href="/front2/html/index_faq.jsp">FAQ</a></li>
+			<li><a href="/front2/html/index_management.jsp">Management</a></li>
 		</div>
 	</div>
 
@@ -23,12 +23,12 @@
 	<div class="footer_bottom">
 
 		<div class="footer_bottom_top_list">
-			<li><a href="/company_using_law.jsp">핀도이용약관</a></li>
-			<li><a href="/company_financial_transation_law.jsp">전자금융거래이용약관</a></li>
+			<li><a href="/front2/html/company_using_law.jsp">핀도이용약관</a></li>
+			<li><a href="/front2/html/company_financial_transation_law.jsp">전자금융거래이용약관</a></li>
 		</div>
 		<div class="footer_bottom_top_list">
-			<li><a href="/company_personal_info_law.jsp">개인정보처리방침</a></li>
-			<li><a href="/company_management_announcement.jsp">경영공지</a></li>
+			<li><a href="/front2/html/company_personal_info_law.jsp">개인정보처리방침</a></li>
+			<li><a href="/front2/html/company_management_announcement.jsp">경영공지</a></li>
 		</div>
 	</div>
 
