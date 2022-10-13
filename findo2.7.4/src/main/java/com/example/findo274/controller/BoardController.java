@@ -131,27 +131,49 @@ public class BoardController {
 
     @PostMapping("board_edit_ok")
     public ModelAndView board_edit_ok(HttpServletRequest request, HttpServletResponse response, HttpSession session, BoardVO boardVO) throws Exception{
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         int board_no = Integer.parseInt(request.getParameter("board_no"));
         int page = 1;
+
+
         if(request.getParameter("page") != null){
             page = Integer.parseInt(request.getParameter("page"));
         }
+        boardVO = this.boardService.getBoardCont2(board_no);
 
-        String title = request.getParameter("board_title");
-        String cont = request.getParameter("board_cont");
+        String id = (String) session.getAttribute("id");
+        String board_name = boardVO.getBoard_name();
 
-        boardVO.setBoard_title(title);
-        boardVO.setBoard_cont(cont);
+        if(board_name.equals(id)){
+            String title = request.getParameter("board_title");
+            String cont = request.getParameter("board_cont");
 
-        this.boardService.editBoard(boardVO);
+            boardVO.setBoard_title(title);
+            boardVO.setBoard_cont(cont);
 
-        ModelAndView em = new ModelAndView("redirect:/board_cont");
-        em.addObject("board_no", board_no);
-        em.addObject("page", page);
-        em.addObject("state", "cont");
+            this.boardService.editBoard(boardVO);
 
-        return em;
+            ModelAndView em = new ModelAndView("redirect:/board_cont");
+            em.addObject("board_no", board_no);
+            em.addObject("page", page);
+            em.addObject("state", "cont");
+            return em;
+
+        }else if(!board_name.equals(id)){
+            out.println("<script>");
+            out.println("alert('권한이 없습니다..');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+        }
+        else{
+            out.println("<script>");
+            out.println("alert('로그인이 필요합니다.');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+        }
+        return null;
+
     }
 
     @PostMapping("board_del_ok")
