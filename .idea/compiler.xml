@@ -10,6 +10,5 @@
         <module name="findo2.7.4.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
