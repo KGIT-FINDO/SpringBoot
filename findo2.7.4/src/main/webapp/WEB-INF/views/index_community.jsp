@@ -1,12 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./header.jsp" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="index_bell_wrapper">
 
 	<div class="index_bell_main_middle">
 		<div id="bList_wrap">
-			<form method="get" action="/index_community"> <%-- 검색기능 폼 추가 --%>
+			<form method="get" action="/community"> <%-- 검색기능 폼 추가 --%>
 
 				<table>
 					<tr style="text-align: center;">
@@ -30,7 +31,7 @@
                                         값을 &기호로 구분해서 전달함. --%>
 								</td>
 								<td align="center">${b.board_name}</td>
-								<td align="center">${b.board_date}</td>
+								<td align="center">${fn:substring(b.board_date, 0, 10)}</td>
 								<td align="center">${b.board_hit}</td>
 							</tr>
 						</c:forEach>

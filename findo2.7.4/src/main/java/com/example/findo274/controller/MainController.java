@@ -42,6 +42,12 @@ public class MainController {
         return "index_news";
     }
 
+    @GetMapping("/search")
+    String index_search(){
+
+        return "index_search";
+    }
+
 
 
 }
