@@ -8,11 +8,14 @@
 <div class="chart">
     <script>
         let chartLabels = [];//x축
-
         let chartData = [];//y축
+
 
         //자바코드로 json 받으면 x축, y축으로 나눠줌
         function StockObjectParse(stockObject, period){
+
+            console.log(period);
+
             const obj = stockObject;
             let d = obj.month1;
 
@@ -88,10 +91,59 @@
             })
 
         }
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <canvas id="myChart" height="400px" width="400px">five chart</canvas>
-    <script>StockObjectParse(${s},"daily");</script>
+    <canvas id="myChart" height="100px" width="100px">five chart</canvas>
+    <input type="button" value="1일" id="daily">
+    <input type="button" value="한달" id="month1">
+    <input type="button" value="세달" id="month3">
+    <input type="button" value="1년" id="year1">
+    <input type="button" value="3년" id="year3">
+    <script>
+        StockObjectParse(${s},"");
+        let atn = document.getElementById("daily");
+        atn.addEventListener('click', (e) => {
+            if(chartLabels.length > 0){
+                chartLabels.splice(0, chartLabels.length);
+                chartData.splice(0, chartData.length);
+            }
+            StockObjectParse(${s},"daily");
+        });
+        let btn = document.getElementById("month1");
+        btn.addEventListener('click', (e) => {
+            if(chartLabels.length > 0){
+                chartLabels.splice(0, chartLabels.length);
+                chartData.splice(0, chartData.length);
+            }
+            StockObjectParse(${s},"month1");
+        });
+        let ctn = document.getElementById("month3");
+        ctn.addEventListener('click', (e) => {
+            if(chartLabels.length > 0){
+                chartLabels.splice(0, chartLabels.length);
+                chartData.splice(0, chartData.length);
+            }
+            StockObjectParse(${s},"month3");
+        });
+        let dtn = document.getElementById("year1");
+        dtn.addEventListener('click', (e) => {
+            if(chartLabels.length > 0){
+                chartLabels.splice(0, chartLabels.length);
+                chartData.splice(0, chartData.length);
+            }
+            StockObjectParse(${s},"year1");
+        });
+        let etn = document.getElementById("year3");
+        etn.addEventListener('click', (e) => {
+            if(chartLabels.length > 0){
+                chartLabels.splice(0, chartLabels.length);
+                chartData.splice(0, chartData.length);
+            }
+            StockObjectParse(${s},"year3");
+        });
+    </script>
 
 </div>
 </body>
