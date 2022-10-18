@@ -27,7 +27,7 @@ public class TestGraphController {
         m.addAttribute("s", stockInfo.getStock("005930"));
 
 
-        return "graphTest";
+        return "test";
     }
 
 }

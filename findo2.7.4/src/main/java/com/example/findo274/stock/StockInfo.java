@@ -139,7 +139,7 @@ public class StockInfo {
             dailyDate.add(date);
             dailyPrice.add(price);
         }
-        dailyData.put("dAte", dailyDate);
+        dailyData.put("date", dailyDate);
         dailyData.put("price", dailyPrice);
 
 
