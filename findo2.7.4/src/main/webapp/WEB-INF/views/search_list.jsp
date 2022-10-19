@@ -35,7 +35,7 @@
                                 &nbsp;<%--한칸의 빈공백 --%>
 
                                 <td style="text-align: center;">
-                                    <a href="search_list?stocknumber=${s.stocknumber}&stockname=${stockname}" style="text-decoration: none; color:black;">${s.stockname}</a>
+                                    <a href="stock_cont?stocknumber=${s.stocknumber}" style="text-decoration: none; color:black;">${s.stockname}</a>
                                         <%-- *.do?board_no=번호&page=쪽번호&state=cont 주소창에 노출되는 get방식(쿼리스트링 방식)으로 3개의 피라미터
                                         값을 &기호로 구분해서 전달함. --%>
                                 </td>

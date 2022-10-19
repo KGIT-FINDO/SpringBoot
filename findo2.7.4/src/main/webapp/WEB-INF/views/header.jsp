@@ -39,7 +39,7 @@
 			<div class="header_top_icons">
 				<a href="/webapp/WEB-INF/views/index_bell.jsp"><button id="header_top_bell">
 					<i class="fa-solid fa-bell fa-2x"></i>
-				</button></a> <a href="/webapp/WEB-INF/views/index_search.jsp"><button id="header_top_search">
+				</button></a> <a href="/search"><button id="header_top_search">
 				<i class="fa-solid fa-magnifying-glass fa-2x"></i>
 			</button></a>
 				<a href="/webapp/WEB-INF/views/logout.jsp"><button><i class="fa-solid fa-right-to-bracket fa-2x"></i></button></a>

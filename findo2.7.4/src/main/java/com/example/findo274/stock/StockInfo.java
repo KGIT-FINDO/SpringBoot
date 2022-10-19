@@ -54,6 +54,12 @@ public class StockInfo {
         JSONObject daily = (JSONObject) chart.get("DAILY"); //당일 하루 데이터
 
 
+        //api 전체 데이터 중 투자정보에 관한 데이터만 parsing
+        JSONObject outPrice = (JSONObject) result.get("price");
+        JSONObject detail = (JSONObject) outPrice.get("detail");
+        JSONObject investmentIndicator = (JSONObject) outPrice.get("investmentIndicator") ;
+
+
 
         //기간별 데
         JSONArray yearlyArray = (JSONArray) yearly.get("chart");
@@ -148,6 +154,8 @@ public class StockInfo {
         returnData.put("year1", yearlyData);
         returnData.put("month3", monthly3Data);
         returnData.put("month1", monthlyData);
+        returnData.put("detail", detail);
+        returnData.put("investmentIndicator", investmentIndicator);
 
         //System.out.println(returnData);
         returnData.put("daily", dailyData);

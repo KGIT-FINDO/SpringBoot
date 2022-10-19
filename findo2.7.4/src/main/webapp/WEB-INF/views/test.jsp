@@ -9,8 +9,7 @@
     <script>
         let chartLabels = [];//x축
         let chartData = [];//y축
-
-
+        
         //자바코드로 json 받으면 x축, y축으로 나눠줌
         function StockObjectParse(stockObject, period){
 

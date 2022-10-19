@@ -17,4 +17,9 @@ public class SearchDAOImpl implements SearchDAO {
     public List<SearchVO> getSearchList(SearchVO svo) {
         return this.session.selectList("search_list", svo);
     }
+
+    @Override
+    public SearchVO getSearchCont(String stocknumber) {
+        return this.session.selectOne("search_cont", stocknumber);
+    }
 }

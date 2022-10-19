@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface SearchService {
     List<SearchVO> getSearchList(SearchVO svo);
+
+    SearchVO getSearchCont(String stocknumber);
 }

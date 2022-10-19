@@ -15,4 +15,9 @@ public class SearchServiceImpl implements SearchService{
     public List<SearchVO> getSearchList(SearchVO svo) {
         return  searchDAO.getSearchList(svo);
     }
+
+    @Override
+    public SearchVO getSearchCont(String stocknumber) {
+        return searchDAO.getSearchCont(stocknumber);
+    }
 }

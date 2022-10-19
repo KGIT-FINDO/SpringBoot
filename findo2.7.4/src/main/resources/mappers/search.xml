@@ -10,4 +10,8 @@
         select * from kospi where stockname like #{find_name} or stocknumber like #{find_name}
     </select>
 
+    <select id="search_cont" resultType="com.example.findo274.VO.SearchVO">
+        select * from kospi where stocknumber=#{find_name}
+    </select>
+
 </mapper>
