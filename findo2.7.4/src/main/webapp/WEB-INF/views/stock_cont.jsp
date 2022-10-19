@@ -143,13 +143,16 @@
             </div>
             <table id="bCont_t">
                 <tr>
-                    <th>현재가격</th><td>${stock.detail.openPrice}</td>
+                    <th>현재가격</th><td> ${stock.detail.openPrice}</td>
+                    <th>PER</th><td>${stock.investmentIndicator.perValue}</td>
                 </tr>
                 <tr>
-                    <th>고가</th><td>${stock.detail.highPrice}</td>
+                    <th>고가</th><td> ${stock.detail.highPrice}</td>
+                    <th>PBR</th><td> ${stock.investmentIndicator.pbrValue}</td>
                 </tr>
                 <tr>
-                    <th>저가</th><td>${stock.detail.lowPrice}</td>
+                    <th>저가</th><td> ${stock.detail.lowPrice}</td>
+                    <th>EPS</th><td> ${stock.investmentIndicator.epsValue}</td>
                 </tr>
             </table>
             <div id="dCont_menu">

@@ -21,7 +21,7 @@
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" id="find_name" name="find_name" class="input-box" maxlength="20" placeholder="종목명 /코드 검색" />
             </div>
-            <div class="search-list">
+            <div class="search-list" align="center">
                 <table>
                     <tr style="text-align: center;">
                         <th width="50%" height="26">종목명</th>
