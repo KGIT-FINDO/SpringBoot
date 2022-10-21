@@ -57,15 +57,15 @@
                             {
                                 label : "차트",
 
-                                fillColor : "#d92020",
+                                fillColor : "#f5f5f5",
 
                                 strokeColor : "#8c32e0",
 
-                                pointColor : "#e032dd",
+                                pointColor : "#ffffff",
 
                                 pointStrokeColor : "#187de8",
 
-                                pointHighlightFill : "#187de8",
+                                pointHighlightFill : "#fcfcfc",
 
                                 pointHighlightStroke : "#32e089",
 
