@@ -14,8 +14,6 @@ public class MainController {
 
     @Autowired
 
-
-
     @GetMapping("/")
     public String Main(){
         return "index";
@@ -31,16 +29,15 @@ public class MainController {
 
     }
 
-
         return "index_portfolio";
     }
-
 
 
     @GetMapping("/news")
     public String News(){
         return "index_news";
     }
+
 
     @GetMapping("/search")
     String index_search(){

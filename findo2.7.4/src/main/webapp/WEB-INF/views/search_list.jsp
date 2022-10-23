@@ -30,7 +30,6 @@
                     <c:if test="${!empty slist}"> <%-- 검색전후 목록이 있는 경우 실행 --%>
                         <c:forEach var="s" items="${slist}">
                             <tr>
-
                                 <td align="center">${s.stocknumber}</td>
                                 &nbsp;<%--한칸의 빈공백 --%>
 
